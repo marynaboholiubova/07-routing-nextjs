@@ -1,0 +1,17 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.content {
+  margin-bottom: 16px;
+}
+
+.tag {
+  font-weight: 600;
+}

@@ -1,18 +1,19 @@
+'use client';
+
 import { useState } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 import { useQuery } from '@tanstack/react-query';
 
 import css from './App.module.css';
 
-import SearchBox from '../SearchBox/SearchBox';
-import Pagination from '../Pagination/Pagination';
-import NoteList from '../NoteList/NoteList';
-import Modal from '../Modal/Modal';
-import NoteForm from '../NoteForm/NoteForm';
-import Loader from '../Loader/Loader';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
-import { fetchNotes } from '../../services/noteService';
+import SearchBox from '../../components/SearchBox/SearchBox';
+import Pagination from '../../components/Pagination/Pagination';
+import NoteList from '../../components/NoteList/NoteList';
+import Modal from '../../components/Modal/Modal';
+import NoteForm from '../../components/NoteForm/NoteForm';
+
+import { fetchNotes } from '../../lib/api';
 
 export default function App() {
   const [page, setPage] = useState<number>(1);
@@ -56,9 +57,7 @@ export default function App() {
         </button>
       </header>
 
-      {isLoading && <Loader />}
-
-      {isError && <ErrorMessage />}
+    
 
       {data && data.notes.length > 0 && (
         <NoteList notes={data.notes} />
