@@ -9,17 +9,25 @@ export const metadata: Metadata = {
   description: 'NoteHub app',
 };
 
+type Props = {
+  children: React.ReactNode;
+  modal: React.ReactNode;
+};
+
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+  modal,
+}: Props) {
   return (
     <html lang="en">
       <body>
         <TanStackProvider>
           <Header />
+
           {children}
+
+          {modal}
+
           <Footer />
         </TanStackProvider>
       </body>

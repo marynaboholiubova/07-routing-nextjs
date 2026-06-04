@@ -1,3 +1,5 @@
+import css from './layout.module.css';
+
 type Props = {
   children: React.ReactNode;
   sidebar: React.ReactNode;
@@ -5,9 +7,14 @@ type Props = {
 
 export default function NotesFilterLayout({ children, sidebar }: Props) {
   return (
-    <>
-      {sidebar}
-      {children}
-    </>
+    <div className={css.container}>
+      <aside className={css.sidebar}>
+        {sidebar}
+      </aside>
+
+      <main className={css.content}>
+        {children}
+      </main>
+    </div>
   );
 }

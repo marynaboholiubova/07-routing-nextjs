@@ -1,5 +1,3 @@
-// components/Header/Header.tsx
-
 import Link from 'next/link';
 import css from './Header.module.css';
 
@@ -16,11 +14,10 @@ export default function Header() {
             <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/notes">Notes</Link>
+            <Link href="/notes/filter/all">Notes</Link>
           </li>
         </ul>
       </nav>
     </header>
   );
 }
-
